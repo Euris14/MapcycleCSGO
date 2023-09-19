@@ -1,14 +1,14 @@
 
 # Mapcycle Maker
-
 This python script scans your csgo/maps directory, asks the user to select 
 maps, checks maps against mariadb database, and then appends them to ~/csgo/addons/sourcemod/adminmenu_maplist.ini.
 ## Deployment
 
-To deploy this project run
+To deploy this project place the repository in your csgo server's user, and run
 
 ```bash
-  npm run deploy
+  cd Maplist-Creator-CSGO/
+  python3 maprotation.py
 ```
     
 ## Demo
@@ -91,12 +91,21 @@ adminmenu_maplist.ini
 
 ```
 ## Installation
-
-Install my-project with npm
-
 ```bash
-  cd Maplist-Creator-CSGO
+  cd Maplist-Creator-CSGO/
   pip3 install -r requirements
+```
+Next make a secrets.json file;
+```bash
+  {
+    "mysql":{
+        "ip" : "127.0.0.1",
+        "user" : "user",
+        "pass" : "pass",
+        "port" : "3306",
+        "database" : "surftimer"
+    }
+}
 ```
 ## License
 
